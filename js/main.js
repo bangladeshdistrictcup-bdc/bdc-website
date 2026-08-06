@@ -19,7 +19,6 @@ if (menuBtn && mobileMenu) {
     mobileMenu.classList.toggle('open');
   });
 
-  // Close menu when a link is clicked
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
@@ -43,4 +42,3 @@ document.querySelectorAll('.fade-in').forEach(el => {
   el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
   observer.observe(el);
 });
-
