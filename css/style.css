@@ -639,3 +639,56 @@ body {
     grid-template-columns: 2fr 1fr 1fr 1fr;
   }
 }
+
+/* ===== Premium Button Animation for ALL buttons ===== */
+.glass-btn,
+.glass-btn-gold,
+.glass-btn-outline,
+.menu-btn,
+button,
+a.glass-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
+  -webkit-tap-highlight-color: transparent !important;
+  user-select: none;
+}
+
+.glass-btn:active,
+.glass-btn-gold:active,
+.glass-btn-outline:active,
+.menu-btn:active,
+button:active,
+a.glass-btn:active {
+  transform: scale(0.94) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3), inset 0 2px 6px rgba(0,0,0,0.15) !important;
+}
+
+.glass-btn-gold:active {
+  background: linear-gradient(135deg, rgba(212,175,55,0.7), rgba(212,175,55,0.4)) !important;
+}
+
+.glass-btn-outline:active {
+  background: rgba(212, 175, 55, 0.25) !important;
+}
+
+.menu-btn:active {
+  transform: scale(0.9) !important;
+  background: rgba(255,255,255,0.2) !important;
+}
+
+/* Card press effect */
+.card:active {
+  transform: scale(0.97) !important;
+  transition: transform 0.15s ease !important;
+}
+
+/* Smooth hover for desktop */
+@media (hover: hover) {
+  .glass-btn:hover,
+  .glass-btn-gold:hover {
+    transform: translateY(-3px) !important;
+  }
+  .glass-btn:hover:active,
+  .glass-btn-gold:hover:active {
+    transform: scale(0.94) !important;
+  }
+}
