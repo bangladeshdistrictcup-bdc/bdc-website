@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bangladeshdistrictcup-bdc.github.io/bdc-website/sitemap.xml
