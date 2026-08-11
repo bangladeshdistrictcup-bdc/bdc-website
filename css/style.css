@@ -722,3 +722,36 @@ a.glass-btn:active {
 .footer a:active {
   color: #D4AF37 !important;
 }
+
+/* ===== Force reset footer link colors (mobile fix) ===== */
+.footer a {
+  color: rgba(255, 255, 255, 0.65) !important;
+  transition: color 0.15s ease !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+/* শুধু চাপ ধরে রাখার সময় সোনালি */
+.footer a:active {
+  color: #D4AF37 !important;
+}
+
+/* ডেস্কটপে হোভার চালু */
+@media (hover: hover) and (pointer: fine) {
+  .footer a:hover {
+    color: #D4AF37 !important;
+  }
+}
+
+/* মোবাইলে hover/focus আটকে থাকবে না */
+@media (hover: none) {
+  .footer a:hover,
+  .footer a:focus,
+  .footer a:focus-visible {
+    color: rgba(255, 255, 255, 0.65) !important;
+  }
+}
+
+/* Heading গুলো (Quick Links, Explore, Contact) সোনালিই থাকবে */
+.footer h4 {
+  color: #D4AF37 !important;
+}
