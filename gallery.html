@@ -11,7 +11,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
       max-width: 700px;
-      margin: 0 auto 40px;
+      margin: 0 auto;
     }
     .album-card {
       background: rgba(255,255,255,0.06);
@@ -20,16 +20,16 @@
       overflow: hidden;
       text-decoration: none;
       color: white;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.25s ease;
     }
-    .album-card:active { transform: scale(0.97); }
+    .album-card:active { transform: scale(0.96); }
     .album-cover {
-      height: 110px;
+      height: 120px;
       background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 36px;
+      font-size: 40px;
     }
     .album-info {
       padding: 12px 14px;
@@ -38,53 +38,17 @@
     .album-info h3 {
       font-size: 14px;
       font-weight: 700;
-      margin-bottom: 4px;
+      margin: 0 0 4px;
       color: white;
     }
     .album-info p {
       font-size: 11px;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.45);
       margin: 0;
     }
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-    .photo-item {
-      aspect-ratio: 1;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-      border: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.35);
-      font-size: 13px;
-      text-align: center;
-      padding: 10px;
-      overflow: hidden;
-    }
-    .photo-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 14px;
-    }
-    .section-block {
-      max-width: 700px;
-      margin: 0 auto 48px;
-      scroll-margin-top: 90px;
-    }
-    .section-block h2 {
-      color: #D4AF37;
-      font-size: 18px;
-      margin-bottom: 14px;
-      text-align: center;
-    }
     @media (min-width: 640px) {
-      .album-grid, .photo-grid { grid-template-columns: repeat(3, 1fr); }
-      .album-cover { height: 130px; }
+      .album-grid { grid-template-columns: repeat(3, 1fr); }
+      .album-cover { height: 140px; }
     }
   </style>
 </head>
@@ -98,7 +62,6 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="tournament.html">Tournament</a></li>
         <li><a href="gallery.html" class="active">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -108,7 +71,6 @@
     <div class="mobile-menu">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="tournament.html">Tournament</a>
       <a href="gallery.html">Gallery</a>
       <a href="contact.html">Contact</a>
       <a href="register.html" style="color:#D4AF37;font-weight:700;">Register Now</a>
@@ -117,52 +79,48 @@
 
   <section class="page-hero">
     <h1>Gallery</h1>
-    <p>Albums & moments from Bangladesh District Cup</p>
+    <p>Select an album</p>
   </section>
 
   <section class="section section-dark">
     <div class="container">
-
-      <!-- Folder / Album list (phone gallery style) -->
-      <p style="text-align:center; color:rgba(255,255,255,0.5); font-size:13px; margin-bottom:18px;">Albums</p>
-      
       <div class="album-grid">
-        <a href="#jersey" class="album-card">
+        <a href="gallery-jersey.html" class="album-card">
           <div class="album-cover">👕</div>
           <div class="album-info">
             <h3>Official Jersey</h3>
             <p>BDC Kit</p>
           </div>
         </a>
-        <a href="#matches" class="album-card">
+        <a href="gallery-matches.html" class="album-card">
           <div class="album-cover">⚽</div>
           <div class="album-info">
             <h3>Match Photos</h3>
             <p>On the field</p>
           </div>
         </a>
-        <a href="#ceremony" class="album-card">
+        <a href="gallery-ceremony.html" class="album-card">
           <div class="album-cover">🎤</div>
           <div class="album-info">
             <h3>Opening Ceremony</h3>
             <p>Events</p>
           </div>
         </a>
-        <a href="#players" class="album-card">
+        <a href="gallery-players.html" class="album-card">
           <div class="album-cover">👤</div>
           <div class="album-info">
             <h3>Players</h3>
             <p>Teams & stars</p>
           </div>
         </a>
-        <a href="#trophy" class="album-card">
+        <a href="gallery-trophy.html" class="album-card">
           <div class="album-cover">🏆</div>
           <div class="album-info">
             <h3>Trophy Moments</h3>
             <p>Champions</p>
           </div>
         </a>
-        <a href="#final" class="album-card">
+        <a href="gallery-final.html" class="album-card">
           <div class="album-cover">🔥</div>
           <div class="album-info">
             <h3>Final Match</h3>
@@ -170,72 +128,11 @@
           </div>
         </a>
       </div>
-
-      <!-- Official Jersey Section -->
-      <div id="jersey" class="section-block">
-        <h2>Official Jersey</h2>
-        <div class="photo-grid">
-          <div class="photo-item">Jersey Front<br><small>Photo soon</small></div>
-          <div class="photo-item">Jersey Back<br><small>Photo soon</small></div>
-          <div class="photo-item">Home Kit<br><small>Photo soon</small></div>
-          <div class="photo-item">Away Kit<br><small>Photo soon</small></div>
-        </div>
-      </div>
-
-      <!-- Match Photos -->
-      <div id="matches" class="section-block">
-        <h2>Match Photos</h2>
-        <div class="photo-grid">
-          <div class="photo-item">Photo soon</div>
-          <div class="photo-item">Photo soon</div>
-          <div class="photo-item">Photo soon</div>
-          <div class="photo-item">Photo soon</div>
-        </div>
-      </div>
-
-      <!-- Opening Ceremony -->
-      <div id="ceremony" class="section-block">
-        <h2>Opening Ceremony</h2>
-        <div class="photo-grid">
-          <div class="photo-item">Photo soon</div>
-          <div class="photo-item">Photo soon</div>
-        </div>
-      </div>
-
-      <!-- Players -->
-      <div id="players" class="section-block">
-        <h2>Players</h2>
-        <div class="photo-grid">
-          <div class="photo-item">Photo soon</div>
-          <div class="photo-item">Photo soon</div>
-          <div class="photo-item">Photo soon</div>
-          <div class="photo-item">Photo soon</div>
-        </div>
-      </div>
-
-      <!-- Trophy -->
-      <div id="trophy" class="section-block">
-        <h2>Trophy Moments</h2>
-        <div class="photo-grid">
-          <div class="photo-item">Photo soon</div>
-          <div class="photo-item">Photo soon</div>
-        </div>
-      </div>
-
-      <!-- Final -->
-      <div id="final" class="section-block">
-        <h2>Final Match</h2>
-        <div class="photo-grid">
-          <div class="photo-item">Photo soon</div>
-          <div class="photo-item">Photo soon</div>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <footer class="footer">
-    <div class="footer-bottom">© 2026 Bangladesh District Cup. All rights reserved.</div>
+    <div class="footer-bottom">© 2026 Bangladesh District Cup</div>
   </footer>
   <script src="js/main.js"></script>
 </body>
