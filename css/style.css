@@ -692,3 +692,33 @@ a.glass-btn:active {
     transform: scale(0.94) !important;
   }
 }
+
+/* ===== Fix sticky gold color on mobile ===== */
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+  color: #D4AF37;
+}
+
+/* Mobile-এ hover বন্ধ — শুধু ট্যাপের সময় ইফেক্ট */
+@media (hover: none) {
+  .footer a:hover {
+    color: rgba(255,255,255,0.65) !important;
+  }
+  
+  .glass-btn:hover,
+  .glass-btn-gold:hover,
+  .glass-btn-outline:hover {
+    transform: none !important;
+  }
+}
+
+/* ট্যাপ শেষে আবার আগের রঙে ফিরে আসবে */
+.footer a {
+  transition: color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.footer a:active {
+  color: #D4AF37 !important;
+}
