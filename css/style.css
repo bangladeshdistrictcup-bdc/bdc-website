@@ -826,3 +826,64 @@ a.glass-btn.glass-btn-gold:active,
   transform: scale(0.96) !important;
   box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25) !important;
 }
+
+/* ===== Smooth global animations ===== */
+
+/* সব এলিমেন্টে হালকা ট্রানজিশন */
+a, button, .card, .glass-btn, .stat-card, .vision-box, .mission-box {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease, opacity 0.25s ease !important;
+}
+
+/* পেজ লোড হলে নরম করে আসবে */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-hero,
+.section,
+.hero-content,
+.form-box,
+.card {
+  animation: fadeUp 0.6s ease both;
+}
+
+/* একটু একটু করে delay — সুন্দর লাগে */
+.cards .card:nth-child(1) { animation-delay: 0.05s; }
+.cards .card:nth-child(2) { animation-delay: 0.10s; }
+.cards .card:nth-child(3) { animation-delay: 0.15s; }
+.cards .card:nth-child(4) { animation-delay: 0.20s; }
+.cards .card:nth-child(5) { animation-delay: 0.25s; }
+.cards .card:nth-child(6) { animation-delay: 0.30s; }
+
+/* কার্ড হোভার */
+.card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12) !important;
+}
+
+/* স্ক্রল স্মুথ */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar নরম */
+.navbar {
+  transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* মোবাইল মেনু স্মুথ */
+.mobile-menu {
+  transition: opacity 0.25s ease, transform 0.25s ease !important;
+}
+
+/* ইমেজ নরম */
+img {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
