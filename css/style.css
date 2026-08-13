@@ -1100,3 +1100,55 @@ a.glass-btn:active {
   padding: 6px 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
+
+/* ===== Remove white flash & tap highlight ===== */
+
+html, body {
+  background-color: #0B0B0B !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+a, button, .card, .album-card, .photo-item, .glass-btn, .back-btn, input, textarea {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+}
+
+a:focus, button:focus, .card:focus, .album-card:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* পেজ লোডে সাদা ফ্ল্যাশ বন্ধ */
+.page-hero,
+.section,
+.hero,
+.hero-content {
+  background-color: transparent;
+}
+
+/* অ্যানিমেশন আগে সাদা না দেখিয়ে সরাসরি নরম করে আসবে */
+@keyframes fadeUp {
+  from {
+    opacity: 0.3;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-hero,
+.section,
+.hero-content,
+.form-box,
+.card {
+  animation: fadeUp 0.45s ease both;
+}
