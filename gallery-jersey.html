@@ -6,11 +6,46 @@
   <title>Official Jersey | BDC Gallery</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .photo-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; max-width:700px; margin:0 auto; }
-    .photo-item { aspect-ratio:1; border-radius:14px; background:linear-gradient(135deg,#1a1a1a,#2d2d2d); border:1px solid rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.4); font-size:13px; text-align:center; overflow:hidden; }
-    .photo-item img { width:100%; height:100%; object-fit:cover; }
-    .back-btn { display:inline-flex; align-items:center; gap:6px; color:#D4AF37; text-decoration:none; font-size:14px; margin-bottom:20px; }
-    @media(min-width:640px){ .photo-grid{ grid-template-columns:repeat(3,1fr);} }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .photo-item {
+      aspect-ratio: 1;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 13px;
+      text-align: center;
+    }
+    .photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      display: block;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #D4AF37;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    @media (min-width: 640px) {
+      .photo-grid { grid-template-columns: repeat(3, 1fr); }
+    }
   </style>
 </head>
 <body>
@@ -20,7 +55,7 @@
         <img src="logo.png" alt="BDC Logo" style="width:42px;height:42px;border-radius:12px;object-fit:contain;">
         <div class="logo-text"><strong>BDC</strong><span>District Cup</span></div>
       </a>
-      <a href="gallery.html" class="glass-btn" style="padding:8px 14px;font-size:13px;">← Albums</a>
+      <a href="gallery.html" class="back-btn" style="margin:0;">← Albums</a>
     </div>
   </nav>
 
@@ -32,9 +67,11 @@
   <section class="section section-dark" style="padding-top:20px;">
     <div class="container">
       <a href="gallery.html" class="back-btn">← Back to Albums</a>
+
       <div class="photo-grid">
         <div class="photo-item">
-  			<div class="photo-item"><img src="jarsey01.jpg" alt="Jersey Front"></div>
+          <img src="jarsey01.jpg" alt="Jersey Front">
+        </div>
         <div class="photo-item">Jersey Back<br><small>Coming soon</small></div>
         <div class="photo-item">Home Kit<br><small>Coming soon</small></div>
         <div class="photo-item">Away Kit<br><small>Coming soon</small></div>
@@ -42,7 +79,9 @@
     </div>
   </section>
 
-  <footer class="footer"><div class="footer-bottom">© 2026 Bangladesh District Cup</div></footer>
+  <footer class="footer">
+    <div class="footer-bottom">© 2026 Bangladesh District Cup</div>
+  </footer>
   <script src="js/main.js"></script>
 </body>
 </html>
