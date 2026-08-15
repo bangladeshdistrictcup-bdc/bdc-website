@@ -1,4 +1,4 @@
-/* ===== BDC Static Website - Premium Glass Design ===== */
+/* ===== BDC Static Website - Fixed (no white flash + smooth animation) ===== */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
@@ -13,18 +13,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   scroll-behavior: smooth;
+  background: #0B0B0B;
 }
 
 body {
   font-family: 'Inter', 'Noto Sans Bengali', system-ui, sans-serif;
-  background: var(--white);
+  background: #0B0B0B;
   color: var(--black);
   line-height: 1.6;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+a, button, input, textarea {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 /* ===== Glass Effects ===== */
@@ -60,29 +69,28 @@ body {
   color: white;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   box-shadow: 0 4px 16px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2);
+  user-select: none;
 }
 
-.glass-btn:hover {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(212, 175, 55, 0.6);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.25);
+.glass-btn:active {
+  transform: scale(0.95);
 }
 
 .glass-btn-gold {
-  background: linear-gradient(135deg, rgba(212,175,55,0.35), rgba(212,175,55,0.15));
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  color: var(--black);
+  background: linear-gradient(180deg, #E0C35A 0%, #C9A227 100%);
+  border: 1px solid rgba(212, 175, 55, 0.7);
+  color: #0B0B0B;
   font-weight: 700;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
 }
 
-.glass-btn-gold:hover {
-  background: linear-gradient(135deg, rgba(212,175,55,0.5), rgba(212,175,55,0.25));
-  border-color: rgba(212, 175, 55, 0.8);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(212, 175, 55, 0.35);
+.glass-btn-gold:active {
+  transform: scale(0.95);
+  background: linear-gradient(180deg, #D4AF37 0%, #B8962E 100%);
 }
 
 .glass-btn-outline {
@@ -91,9 +99,24 @@ body {
   color: var(--gold);
 }
 
-.glass-btn-outline:hover {
-  background: rgba(212, 175, 55, 0.15);
-  border-color: var(--gold);
+.glass-btn-outline:active {
+  transform: scale(0.95);
+  background: rgba(212, 175, 55, 0.2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .glass-btn:hover {
+    background: rgba(255, 255, 255, 0.22);
+    border-color: rgba(212, 175, 55, 0.6);
+    transform: translateY(-2px);
+  }
+  .glass-btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+  }
+  .glass-btn-outline:hover {
+    background: rgba(212, 175, 55, 0.15);
+  }
 }
 
 /* ===== Navbar ===== */
@@ -104,7 +127,7 @@ body {
   right: 0;
   z-index: 1000;
   padding: 16px 0;
-  transition: all 0.4s ease;
+  transition: background 0.3s ease, padding 0.3s ease;
 }
 
 .navbar.scrolled {
@@ -130,18 +153,6 @@ body {
   gap: 10px;
   text-decoration: none;
   color: white;
-}
-
-.logo-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(212,175,55,0.4), rgba(212,175,55,0.15));
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
 }
 
 .logo-text {
@@ -175,7 +186,7 @@ body {
   font-weight: 500;
   padding: 8px 14px;
   border-radius: 12px;
-  transition: all 0.3s;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .nav-links a:hover,
@@ -196,10 +207,14 @@ body {
   padding: 10px;
   color: white;
   cursor: pointer;
-  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-/* Mobile Menu */
+.menu-btn:active {
+  transform: scale(0.9);
+  background: rgba(255,255,255,0.2);
+}
+
 .mobile-menu {
   display: none;
   position: absolute;
@@ -228,7 +243,7 @@ body {
   margin-bottom: 4px;
 }
 
-.mobile-menu a:hover {
+.mobile-menu a:active {
   background: rgba(255,255,255,0.08);
   color: var(--gold);
 }
@@ -338,6 +353,7 @@ body {
 /* ===== Sections ===== */
 .section {
   padding: 80px 20px;
+  background: #FFFFFF;
 }
 
 .section-dark {
@@ -375,7 +391,6 @@ body {
   color: rgba(255,255,255,0.6);
 }
 
-/* Cards Grid */
 .cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -386,28 +401,22 @@ body {
   padding: 24px;
   border-radius: 20px;
   border: 1px solid #eee;
-  transition: all 0.3s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   text-decoration: none;
   color: inherit;
   display: block;
 }
 
-.card:hover {
-  border-color: rgba(212,175,55,0.4);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-  transform: translateY(-3px);
+.card:active {
+  transform: scale(0.97);
 }
 
-.card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  background: rgba(212,175,55,0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  margin-bottom: 14px;
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    border-color: rgba(212,175,55,0.4);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    transform: translateY(-3px);
+  }
 }
 
 .card h3 {
@@ -421,7 +430,6 @@ body {
   color: var(--gray);
 }
 
-/* About */
 .about-grid {
   display: grid;
   gap: 40px;
@@ -460,7 +468,6 @@ body {
   font-size: 18px;
 }
 
-/* Form */
 .form-box {
   background: rgba(11,11,11,0.7);
   backdrop-filter: blur(20px);
@@ -494,7 +501,6 @@ body {
   font-size: 15px;
   font-family: inherit;
   outline: none;
-  transition: border 0.3s;
 }
 
 .form-group input:focus,
@@ -534,7 +540,6 @@ body {
   color: rgba(255,255,255,0.8);
 }
 
-/* Footer */
 .footer {
   background: var(--black);
   color: white;
@@ -551,23 +556,36 @@ body {
 }
 
 .footer h4 {
-  color: var(--gold);
+  color: var(--gold) !important;
   font-size: 14px;
   margin-bottom: 14px;
   letter-spacing: 0.5px;
 }
 
 .footer a {
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.65) !important;
   text-decoration: none;
   font-size: 14px;
   display: block;
   margin-bottom: 8px;
-  transition: color 0.3s;
+  transition: color 0.15s ease;
 }
 
-.footer a:hover {
-  color: var(--gold);
+.footer a:active {
+  color: #D4AF37 !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer a:hover {
+    color: #D4AF37 !important;
+  }
+}
+
+@media (hover: none) {
+  .footer a:hover,
+  .footer a:focus {
+    color: rgba(255,255,255,0.65) !important;
+  }
 }
 
 .footer-bottom {
@@ -578,7 +596,6 @@ body {
   color: rgba(255,255,255,0.4);
 }
 
-/* Page Hero (inner pages) */
 .page-hero {
   background: var(--black);
   padding: 140px 20px 60px;
@@ -597,248 +614,34 @@ body {
   font-size: 16px;
 }
 
-/* Utilities */
 .text-center { text-align: center; }
 .mt-8 { margin-top: 32px; }
 .mb-8 { margin-bottom: 32px; }
 
-/* Responsive */
 @media (min-width: 640px) {
-  .stats {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .form-row {
-    grid-template-columns: 1fr 1fr;
-  }
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .stats { grid-template-columns: repeat(4, 1fr); }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .form-row { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 900px) {
-  .nav-links {
-    display: flex;
-  }
-  .nav-cta {
-    display: inline-flex;
-  }
-  .menu-btn {
-    display: none;
-  }
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .nav-links { display: flex; }
+  .nav-cta { display: inline-flex; }
+  .menu-btn { display: none; }
+  .cards { grid-template-columns: repeat(3, 1fr); }
   .about-grid {
     grid-template-columns: 1.2fr 1fr;
     align-items: start;
   }
-  .footer-grid {
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-  }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
 }
 
-/* ===== Premium Button Animation for ALL buttons ===== */
-.glass-btn,
-.glass-btn-gold,
-.glass-btn-outline,
-.menu-btn,
-button,
-a.glass-btn {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
-  -webkit-tap-highlight-color: transparent !important;
-  user-select: none;
-}
-
-.glass-btn:active,
-.glass-btn-gold:active,
-.glass-btn-outline:active,
-.menu-btn:active,
-button:active,
-a.glass-btn:active {
-  transform: scale(0.94) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3), inset 0 2px 6px rgba(0,0,0,0.15) !important;
-}
-
-.glass-btn-gold:active {
-  background: linear-gradient(135deg, rgba(212,175,55,0.7), rgba(212,175,55,0.4)) !important;
-}
-
-.glass-btn-outline:active {
-  background: rgba(212, 175, 55, 0.25) !important;
-}
-
-.menu-btn:active {
-  transform: scale(0.9) !important;
-  background: rgba(255,255,255,0.2) !important;
-}
-
-/* Card press effect */
-.card:active {
-  transform: scale(0.97) !important;
-  transition: transform 0.15s ease !important;
-}
-
-/* Smooth hover for desktop */
-@media (hover: hover) {
-  .glass-btn:hover,
-  .glass-btn-gold:hover {
-    transform: translateY(-3px) !important;
-  }
-  .glass-btn:hover:active,
-  .glass-btn-gold:hover:active {
-    transform: scale(0.94) !important;
-  }
-}
-
-/* ===== Fix sticky gold color on mobile ===== */
-.footer a:hover,
-.footer a:focus,
-.footer a:active {
-  color: #D4AF37;
-}
-
-/* Mobile-এ hover বন্ধ — শুধু ট্যাপের সময় ইফেক্ট */
-@media (hover: none) {
-  .footer a:hover {
-    color: rgba(255,255,255,0.65) !important;
-  }
-  
-  .glass-btn:hover,
-  .glass-btn-gold:hover,
-  .glass-btn-outline:hover {
-    transform: none !important;
-  }
-}
-
-/* ট্যাপ শেষে আবার আগের রঙে ফিরে আসবে */
-.footer a {
-  transition: color 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.footer a:active {
-  color: #D4AF37 !important;
-}
-
-/* ===== Force reset footer link colors (mobile fix) ===== */
-.footer a {
-  color: rgba(255, 255, 255, 0.65) !important;
-  transition: color 0.15s ease !important;
-  -webkit-tap-highlight-color: transparent !important;
-}
-
-/* শুধু চাপ ধরে রাখার সময় সোনালি */
-.footer a:active {
-  color: #D4AF37 !important;
-}
-
-/* ডেস্কটপে হোভার চালু */
-@media (hover: hover) and (pointer: fine) {
-  .footer a:hover {
-    color: #D4AF37 !important;
-  }
-}
-
-/* মোবাইলে hover/focus আটকে থাকবে না */
-@media (hover: none) {
-  .footer a:hover,
-  .footer a:focus,
-  .footer a:focus-visible {
-    color: rgba(255, 255, 255, 0.65) !important;
-  }
-}
-
-/* Heading গুলো (Quick Links, Explore, Contact) সোনালিই থাকবে */
-.footer h4 {
-  color: #D4AF37 !important;
-}
-
-/* ===== Brighter Register Button ===== */
-.glass-btn-gold {
-  background: linear-gradient(135deg, #D4AF37 0%, #F0D78C 50%, #D4AF37 100%) !important;
-  border: 1px solid rgba(255, 220, 120, 0.8) !important;
-  color: #0B0B0B !important;
-  font-weight: 700 !important;
-  box-shadow: 
-    0 4px 20px rgba(212, 175, 55, 0.45),
-    0 0 0 1px rgba(212, 175, 55, 0.3),
-    inset 0 1px 0 rgba(255,255,255,0.5) !important;
-  text-shadow: none !important;
-}
-
-.glass-btn-gold:hover {
-  background: linear-gradient(135deg, #E8C547 0%, #FFE9A8 50%, #E8C547 100%) !important;
-  box-shadow: 
-    0 8px 28px rgba(212, 175, 55, 0.55),
-    0 0 0 1px rgba(212, 175, 55, 0.5),
-    inset 0 1px 0 rgba(255,255,255,0.6) !important;
-  transform: translateY(-2px) !important;
-}
-
-.glass-btn-gold:active {
-  transform: scale(0.96) !important;
-  box-shadow: 
-    0 2px 10px rgba(212, 175, 55, 0.4),
-    inset 0 2px 4px rgba(0,0,0,0.15) !important;
-}
-
-/* ===== Force bright solid gold Register button ===== */
-a.glass-btn.glass-btn-gold,
-.glass-btn.glass-btn-gold,
-.nav-cta.glass-btn-gold {
-  background: #D4AF37 !important;
-  background-image: linear-gradient(180deg, #F0D78C 0%, #D4AF37 45%, #B8962E 100%) !important;
-  border: 2px solid #F5E6A3 !important;
-  color: #0B0B0B !important;
-  font-weight: 800 !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  opacity: 1 !important;
-  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.55) !important;
-}
-
-a.glass-btn.glass-btn-gold:active,
-.glass-btn.glass-btn-gold:active {
-  background: #C4A030 !important;
-  transform: scale(0.96) !important;
-}
-
-/* ===== Softer gold Register button ===== */
-a.glass-btn.glass-btn-gold,
-.glass-btn.glass-btn-gold,
-.nav-cta.glass-btn-gold {
-  background: linear-gradient(180deg, #E0C35A 0%, #C9A227 100%) !important;
-  border: 1px solid rgba(212, 175, 55, 0.7) !important;
-  color: #0B0B0B !important;
-  font-weight: 700 !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  opacity: 1 !important;
-  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3) !important;
-}
-
-a.glass-btn.glass-btn-gold:active,
-.glass-btn.glass-btn-gold:active {
-  background: linear-gradient(180deg, #D4AF37 0%, #B8962E 100%) !important;
-  transform: scale(0.96) !important;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.25) !important;
-}
-
-/* ===== Smooth global animations ===== */
-
-/* সব এলিমেন্টে হালকা ট্রানজিশন */
-a, button, .card, .glass-btn, .stat-card, .vision-box, .mission-box {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease, opacity 0.25s ease !important;
-}
-
-/* পেজ লোড হলে নরম করে আসবে */
-@keyframes fadeUp {
+/* ===== Soft animation (no white flash) ===== */
+@keyframes fadeUpSoft {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -846,97 +649,32 @@ a, button, .card, .glass-btn, .stat-card, .vision-box, .mission-box {
   }
 }
 
-.page-hero,
-.section,
 .hero-content,
+.page-hero h1,
+.page-hero p,
+.section .container,
 .form-box,
-.card {
-  animation: fadeUp 0.6s ease both;
+.album-grid,
+.photo-grid {
+  animation: fadeUpSoft 0.5s ease both;
 }
 
-/* একটু একটু করে delay — সুন্দর লাগে */
-.cards .card:nth-child(1) { animation-delay: 0.05s; }
-.cards .card:nth-child(2) { animation-delay: 0.10s; }
-.cards .card:nth-child(3) { animation-delay: 0.15s; }
-.cards .card:nth-child(4) { animation-delay: 0.20s; }
-.cards .card:nth-child(5) { animation-delay: 0.25s; }
-.cards .card:nth-child(6) { animation-delay: 0.30s; }
+.cards .card:nth-child(1) { animation: fadeUpSoft 0.5s ease both 0.05s; }
+.cards .card:nth-child(2) { animation: fadeUpSoft 0.5s ease both 0.10s; }
+.cards .card:nth-child(3) { animation: fadeUpSoft 0.5s ease both 0.15s; }
+.cards .card:nth-child(4) { animation: fadeUpSoft 0.5s ease both 0.20s; }
+.cards .card:nth-child(5) { animation: fadeUpSoft 0.5s ease both 0.25s; }
+.cards .card:nth-child(6) { animation: fadeUpSoft 0.5s ease both 0.30s; }
 
-/* কার্ড হোভার */
-.card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.12) !important;
-}
-
-/* স্ক্রল স্মুথ */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Navbar নরম */
-.navbar {
-  transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease !important;
-}
-
-/* মোবাইল মেনু স্মুথ */
-.mobile-menu {
-  transition: opacity 0.25s ease, transform 0.25s ease !important;
-}
-
-/* ইমেজ নরম */
-img {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* ===== Gallery album & button animations ===== */
+/* ===== Gallery ===== */
 .album-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.album-card:hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.2) !important;
-  border-color: rgba(212, 175, 55, 0.4) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .album-card:active {
-  transform: scale(0.95) !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
+  transform: scale(0.94);
 }
 
-.album-cover {
-  transition: transform 0.3s ease, background 0.3s ease !important;
-}
-
-.album-card:active .album-cover {
-  transform: scale(1.05);
-}
-
-/* Back / Albums buttons */
-.back-btn,
-a.glass-btn {
-  transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease !important;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.back-btn:active,
-a.glass-btn:active {
-  transform: scale(0.94) !important;
-  opacity: 0.85;
-}
-
-/* Photo items light press */
-.photo-item {
-  transition: transform 0.2s ease, border-color 0.2s ease !important;
-}
-
-.photo-item:active {
-  transform: scale(0.97) !important;
-  border-color: rgba(212, 175, 55, 0.35) !important;
-}
-
-/* ===== Strong gallery back button ===== */
 .back-btn {
   display: inline-flex !important;
   align-items: center !important;
@@ -950,24 +688,21 @@ a.glass-btn:active {
   text-decoration: none !important;
   font-size: 14px !important;
   font-weight: 600 !important;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease !important;
-  -webkit-tap-highlight-color: transparent !important;
+  transition: transform 0.2s ease, background 0.2s ease !important;
 }
 
 .back-btn:active {
   transform: scale(0.94) !important;
   background: rgba(212, 175, 55, 0.25) !important;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3) !important;
 }
 
-.album-card:active {
-  transform: scale(0.94) !important;
-}
-
-/* ===== Gallery lightbox + like/comment ===== */
 .photo-item {
   cursor: pointer;
-  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.photo-item:active {
+  transform: scale(0.97);
 }
 
 .lightbox {
@@ -991,7 +726,6 @@ a.glass-btn:active {
   max-height: 55vh;
   border-radius: 12px;
   object-fit: contain;
-  background: #1a1a1a;
 }
 
 .lightbox-placeholder {
@@ -1047,7 +781,6 @@ a.glass-btn:active {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .like-btn:active { transform: scale(0.94); }
@@ -1087,8 +820,6 @@ a.glass-btn:active {
   cursor: pointer;
 }
 
-.comment-box button:active { transform: scale(0.95); }
-
 .comment-list {
   max-height: 120px;
   overflow-y: auto;
@@ -1099,56 +830,4 @@ a.glass-btn:active {
 .comment-list div {
   padding: 6px 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-/* ===== Remove white flash & tap highlight ===== */
-
-html, body {
-  background-color: #0B0B0B !important;
-  -webkit-tap-highlight-color: transparent !important;
-  -webkit-touch-callout: none;
-}
-
-*,
-*::before,
-*::after {
-  -webkit-tap-highlight-color: transparent !important;
-}
-
-a, button, .card, .album-card, .photo-item, .glass-btn, .back-btn, input, textarea {
-  -webkit-tap-highlight-color: transparent !important;
-  outline: none !important;
-}
-
-a:focus, button:focus, .card:focus, .album-card:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* পেজ লোডে সাদা ফ্ল্যাশ বন্ধ */
-.page-hero,
-.section,
-.hero,
-.hero-content {
-  background-color: transparent;
-}
-
-/* অ্যানিমেশন আগে সাদা না দেখিয়ে সরাসরি নরম করে আসবে */
-@keyframes fadeUp {
-  from {
-    opacity: 0.3;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.page-hero,
-.section,
-.hero-content,
-.form-box,
-.card {
-  animation: fadeUp 0.45s ease both;
 }
