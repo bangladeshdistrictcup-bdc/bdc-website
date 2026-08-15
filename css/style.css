@@ -831,3 +831,37 @@ a, button, input, textarea {
   padding: 6px 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
+
+/* ===== Center gallery photos ===== */
+.photo-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  text-align: center !important;
+}
+
+.photo-item img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* Official Jersey album page */
+.photo-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 12px !important;
+  max-width: 700px !important;
+  margin: 0 auto !important;
+}
+
+@media (min-width: 640px) {
+  .photo-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
