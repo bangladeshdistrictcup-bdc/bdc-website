@@ -865,3 +865,74 @@ a, button, input, textarea {
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
+
+/* ===== Clear click feedback on ALL buttons & cards ===== */
+
+.glass-btn,
+.glass-btn-gold,
+.glass-btn-outline,
+.menu-btn,
+.back-btn,
+.card,
+.album-card,
+.photo-item,
+.like-btn,
+a.card,
+button {
+  -webkit-tap-highlight-color: transparent !important;
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.15s ease, background 0.15s ease !important;
+  cursor: pointer;
+}
+
+/* চাপ ধরলে ছোট হবে + একটু ম্লান */
+.glass-btn:active,
+.glass-btn-gold:active,
+.glass-btn-outline:active,
+.menu-btn:active,
+.back-btn:active,
+.card:active,
+.album-card:active,
+a.card:active,
+button:active,
+.like-btn:active {
+  transform: scale(0.93) !important;
+  opacity: 0.85 !important;
+}
+
+/* গোল্ড বাটন চাপলে আরও স্পষ্ট */
+.glass-btn-gold:active {
+  background: linear-gradient(180deg, #C9A227 0%, #A88620 100%) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35) !important;
+}
+
+/* Gallery / Tournament টাইপ কার্ড */
+.card:active,
+a.card:active {
+  transform: scale(0.95) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2) !important;
+}
+
+/* অ্যালবাম ফোল্ডার */
+.album-card:active {
+  transform: scale(0.94) !important;
+  box-shadow: 0 2px 12px rgba(212, 175, 55, 0.25) !important;
+}
+
+/* Navbar মেনু বাটন */
+.menu-btn:active {
+  transform: scale(0.88) !important;
+  background: rgba(255,255,255,0.25) !important;
+}
+
+/* Footer লিংক */
+.footer a:active {
+  color: #D4AF37 !important;
+  opacity: 0.8 !important;
+}
+
+/* Mobile menu লিংক */
+.mobile-menu a:active {
+  background: rgba(212, 175, 55, 0.15) !important;
+  color: #D4AF37 !important;
+  transform: scale(0.98) !important;
+}
